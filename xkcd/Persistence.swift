@@ -1,10 +1,3 @@
-//
-//  Persistence.swift
-//  xkcd
-//
-//  Created by Emin Grbo on 16/10/2021.
-//
-
 import CoreData
 
 // MARK: Template persistance info, saved for refference if needed.

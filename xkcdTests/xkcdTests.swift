@@ -1,10 +1,3 @@
-//
-//  xkcdTests.swift
-//  xkcdTests
-//
-//  Created by Emin Grbo on 16/10/2021.
-//
-
 import XCTest
 @testable import xkcd
 

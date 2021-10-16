@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  xkcd
-//
-//  Created by Emin Grbo on 16/10/2021.
-//
-
 import SwiftUI
 import CoreData
 

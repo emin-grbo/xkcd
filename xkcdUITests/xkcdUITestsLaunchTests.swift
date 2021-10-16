@@ -1,10 +1,3 @@
-//
-//  xkcdUITestsLaunchTests.swift
-//  xkcdUITests
-//
-//  Created by Emin Grbo on 16/10/2021.
-//
-
 import XCTest
 
 class xkcdUITestsLaunchTests: XCTestCase {
