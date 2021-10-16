@@ -2,8 +2,6 @@ import SwiftUI
 
 struct ComicBrowser: View {
     
-    
-
     let testComic = Comic(num: 614,
                           title: "Woodpecker",
                           alt: "If you don't have an extension cord I can get that too.  Because we're friends!  Right?",
@@ -11,6 +9,7 @@ struct ComicBrowser: View {
     
     var body: some View {
         VStack {
+            Text("#\(testComic.num)")
             Text(testComic.title)
             
             Spacer()
@@ -18,9 +17,8 @@ struct ComicBrowser: View {
             ComicPage(comic: testComic)
             
             Spacer()
-            
-            Text(testComic.title)
-            Text(testComic.alt)
+            ControlsView()
+
         }
     }
 }
