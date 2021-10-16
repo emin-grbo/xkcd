@@ -20,6 +20,9 @@
 		D7FB5B3A271B16DE00E77506 /* ComicBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B39271B16DE00E77506 /* ComicBrowser.swift */; };
 		D7FB5B3C271B191300E77506 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B3B271B191300E77506 /* Favorites.swift */; };
 		D7FB5B3E271B3F7200E77506 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B3D271B3F7100E77506 /* Comic.swift */; };
+		D7FB5B41271B627200E77506 /* OptionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B40271B627200E77506 /* OptionalModifier.swift */; };
+		D7FB5B43271B62FA00E77506 /* UIScreen+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B42271B62FA00E77506 /* UIScreen+Ex.swift */; };
+		D7FB5B45271B646F00E77506 /* ComicPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B44271B646F00E77506 /* ComicPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		D7FB5B39271B16DE00E77506 /* ComicBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicBrowser.swift; sourceTree = "<group>"; };
 		D7FB5B3B271B191300E77506 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		D7FB5B3D271B3F7100E77506 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
+		D7FB5B40271B627200E77506 /* OptionalModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalModifier.swift; sourceTree = "<group>"; };
+		D7FB5B42271B62FA00E77506 /* UIScreen+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ex.swift"; sourceTree = "<group>"; };
+		D7FB5B44271B646F00E77506 /* ComicPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 				D7FB5B07271AEE1000E77506 /* xkcdApp.swift */,
 				D7FB5B09271AEE1000E77506 /* ContentView.swift */,
 				D7FB5B39271B16DE00E77506 /* ComicBrowser.swift */,
+				D7FB5B44271B646F00E77506 /* ComicPage.swift */,
 				D7FB5B3F271B401B00E77506 /* Models */,
 				D7FB5B3B271B191300E77506 /* Favorites.swift */,
 				D7FB5B38271B15F400E77506 /* Extensions */,
@@ -149,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				D7FB5B36271AF31900E77506 /* Colors+Ex.swift */,
+				D7FB5B40271B627200E77506 /* OptionalModifier.swift */,
+				D7FB5B42271B62FA00E77506 /* UIScreen+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,12 +302,15 @@
 			files = (
 				D7FB5B11271AEE1200E77506 /* Persistence.swift in Sources */,
 				D7FB5B3E271B3F7200E77506 /* Comic.swift in Sources */,
+				D7FB5B45271B646F00E77506 /* ComicPage.swift in Sources */,
 				D7FB5B0A271AEE1000E77506 /* ContentView.swift in Sources */,
 				D7FB5B08271AEE1000E77506 /* xkcdApp.swift in Sources */,
 				D7FB5B14271AEE1200E77506 /* xkcd.xcdatamodeld in Sources */,
 				D7FB5B3C271B191300E77506 /* Favorites.swift in Sources */,
+				D7FB5B43271B62FA00E77506 /* UIScreen+Ex.swift in Sources */,
 				D7FB5B3A271B16DE00E77506 /* ComicBrowser.swift in Sources */,
 				D7FB5B37271AF31900E77506 /* Colors+Ex.swift in Sources */,
+				D7FB5B41271B627200E77506 /* OptionalModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
