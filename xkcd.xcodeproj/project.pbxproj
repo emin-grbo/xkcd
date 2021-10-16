@@ -17,6 +17,8 @@
 		D7FB5B28271AEE1300E77506 /* xkcdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B27271AEE1300E77506 /* xkcdUITests.swift */; };
 		D7FB5B2A271AEE1300E77506 /* xkcdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B29271AEE1300E77506 /* xkcdUITestsLaunchTests.swift */; };
 		D7FB5B37271AF31900E77506 /* Colors+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B36271AF31900E77506 /* Colors+Ex.swift */; };
+		D7FB5B3A271B16DE00E77506 /* ComicBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B39271B16DE00E77506 /* ComicBrowser.swift */; };
+		D7FB5B3C271B191300E77506 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B3B271B191300E77506 /* Favorites.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		D7FB5B27271AEE1300E77506 /* xkcdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcdUITests.swift; sourceTree = "<group>"; };
 		D7FB5B29271AEE1300E77506 /* xkcdUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcdUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D7FB5B36271AF31900E77506 /* Colors+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Ex.swift"; sourceTree = "<group>"; };
+		D7FB5B39271B16DE00E77506 /* ComicBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicBrowser.swift; sourceTree = "<group>"; };
+		D7FB5B3B271B191300E77506 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 			children = (
 				D7FB5B07271AEE1000E77506 /* xkcdApp.swift */,
 				D7FB5B09271AEE1000E77506 /* ContentView.swift */,
+				D7FB5B39271B16DE00E77506 /* ComicBrowser.swift */,
+				D7FB5B3B271B191300E77506 /* Favorites.swift */,
 				D7FB5B38271B15F400E77506 /* Extensions */,
 				D7FB5B10271AEE1200E77506 /* Persistence.swift */,
 				D7FB5B0B271AEE1200E77506 /* Assets.xcassets */,
@@ -278,6 +284,8 @@
 				D7FB5B0A271AEE1000E77506 /* ContentView.swift in Sources */,
 				D7FB5B08271AEE1000E77506 /* xkcdApp.swift in Sources */,
 				D7FB5B14271AEE1200E77506 /* xkcd.xcdatamodeld in Sources */,
+				D7FB5B3C271B191300E77506 /* Favorites.swift in Sources */,
+				D7FB5B3A271B16DE00E77506 /* ComicBrowser.swift in Sources */,
 				D7FB5B37271AF31900E77506 /* Colors+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

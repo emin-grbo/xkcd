@@ -13,7 +13,16 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
-        Rectangle()
+        TabView {
+            ComicBrowser()
+                .tabItem {
+                    Image(systemName: "circle")
+                }
+            Favorites()
+                .tabItem {
+                    Image(systemName: "circle")
+                }
+        }
     }
 }
 
