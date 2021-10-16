@@ -102,9 +102,9 @@
 			children = (
 				D7FB5B07271AEE1000E77506 /* xkcdApp.swift */,
 				D7FB5B09271AEE1000E77506 /* ContentView.swift */,
-				D7FB5B36271AF31900E77506 /* Colors+Ex.swift */,
-				D7FB5B0B271AEE1200E77506 /* Assets.xcassets */,
+				D7FB5B38271B15F400E77506 /* Extensions */,
 				D7FB5B10271AEE1200E77506 /* Persistence.swift */,
+				D7FB5B0B271AEE1200E77506 /* Assets.xcassets */,
 				D7FB5B12271AEE1200E77506 /* xkcd.xcdatamodeld */,
 				D7FB5B0D271AEE1200E77506 /* Preview Content */,
 			);
@@ -134,6 +134,14 @@
 				D7FB5B29271AEE1300E77506 /* xkcdUITestsLaunchTests.swift */,
 			);
 			path = xkcdUITests;
+			sourceTree = "<group>";
+		};
+		D7FB5B38271B15F400E77506 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D7FB5B36271AF31900E77506 /* Colors+Ex.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
