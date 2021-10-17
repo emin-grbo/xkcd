@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ComicBrowser: View {
     
-    @StateObject private var mainOO = ComicBrowserOO()
+    @StateObject private var mainOO = ComicBrowserOO(service: ComicService())
     
     var body: some View {
         VStack {
@@ -18,7 +18,10 @@ struct ComicBrowser: View {
 
         }
         .onAppear {
-            mainOO.fetch()
+//            mainOO.fetchLatestComic()
+//            mainOO.fetch(testCase: .tall)
+//            mainOO.fetch(testCase: .wide)
+            mainOO.fetch(testCase: .real)
         }
     }
 }

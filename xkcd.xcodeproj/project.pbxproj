@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D799ACF3271C59E800D5D1DD /* ComicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799ACF2271C59E800D5D1DD /* ComicService.swift */; };
+		D799ACF5271C5A1B00D5D1DD /* ComicServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799ACF4271C5A1B00D5D1DD /* ComicServiceProtocol.swift */; };
+		D799ACF7271C5A3C00D5D1DD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799ACF6271C5A3C00D5D1DD /* APIError.swift */; };
+		D799ACFC271C5C7700D5D1DD /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799ACFB271C5C7700D5D1DD /* Publisher.swift */; };
 		D7FB5B08271AEE1000E77506 /* xkcdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B07271AEE1000E77506 /* xkcdApp.swift */; };
 		D7FB5B0A271AEE1000E77506 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B09271AEE1000E77506 /* ContentView.swift */; };
 		D7FB5B0C271AEE1200E77506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7FB5B0B271AEE1200E77506 /* Assets.xcassets */; };
@@ -45,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D799ACF2271C59E800D5D1DD /* ComicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicService.swift; sourceTree = "<group>"; };
+		D799ACF4271C5A1B00D5D1DD /* ComicServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicServiceProtocol.swift; sourceTree = "<group>"; };
+		D799ACF6271C5A3C00D5D1DD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		D799ACFB271C5C7700D5D1DD /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		D7FB5B04271AEE1000E77506 /* xkcd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xkcd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FB5B07271AEE1000E77506 /* xkcdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcdApp.swift; sourceTree = "<group>"; };
 		D7FB5B09271AEE1000E77506 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +111,17 @@
 			path = ComicBrowser;
 			sourceTree = "<group>";
 		};
+		D799ACF8271C5A5000D5D1DD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D799ACF6271C5A3C00D5D1DD /* APIError.swift */,
+				D799ACFB271C5C7700D5D1DD /* Publisher.swift */,
+				D799ACF2271C59E800D5D1DD /* ComicService.swift */,
+				D799ACF4271C5A1B00D5D1DD /* ComicServiceProtocol.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		D7FB5AFB271AEE1000E77506 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +147,7 @@
 			children = (
 				D7FB5B07271AEE1000E77506 /* xkcdApp.swift */,
 				D7FB5B09271AEE1000E77506 /* ContentView.swift */,
+				D799ACF8271C5A5000D5D1DD /* Networking */,
 				D799ACEF271C17C400D5D1DD /* ComicBrowser */,
 				D7FB5B44271B646F00E77506 /* ComicPage.swift */,
 				D7FB5B46271B6EA400E77506 /* ControlsView.swift */,
@@ -314,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D799ACFC271C5C7700D5D1DD /* Publisher.swift in Sources */,
 				D7FB5B49271B6F7A00E77506 /* ComicBrowserOO.swift in Sources */,
 				D7FB5B3E271B3F7200E77506 /* Comic.swift in Sources */,
 				D7FB5B45271B646F00E77506 /* ComicPage.swift in Sources */,
@@ -323,8 +344,11 @@
 				D7FB5B14271AEE1200E77506 /* xkcd.xcdatamodeld in Sources */,
 				D7FB5B3C271B191300E77506 /* Favorites.swift in Sources */,
 				D7FB5B4B271B773300E77506 /* ComicBrowserDO.swift in Sources */,
+				D799ACF5271C5A1B00D5D1DD /* ComicServiceProtocol.swift in Sources */,
+				D799ACF3271C59E800D5D1DD /* ComicService.swift in Sources */,
 				D7FB5B43271B62FA00E77506 /* UIScreen+Ex.swift in Sources */,
 				D7FB5B3A271B16DE00E77506 /* ComicBrowser.swift in Sources */,
+				D799ACF7271C5A3C00D5D1DD /* APIError.swift in Sources */,
 				D7FB5B37271AF31900E77506 /* Colors+Ex.swift in Sources */,
 				D7FB5B41271B627200E77506 /* OptionalModifier.swift in Sources */,
 			);

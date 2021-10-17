@@ -9,7 +9,7 @@ class ComicBrowserDO {
     let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
     
     init(inMemory: Bool = false) {
-        container = NSPersistentCloudKitContainer(name: "logostretch")
+        container = NSPersistentCloudKitContainer(name: "xkcd")
         
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
