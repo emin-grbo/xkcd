@@ -4,15 +4,16 @@ struct PlaceHolderView : View {
     
     @State var show = false
     
-    var body : some View{
+    var body : some View {
         Rectangle()
             .fill(
-                LinearGradient(colors: [Color.clear , Color.white.opacity(0.48), Color.clear],
-                               startPoint: show ? .topLeading : .topTrailing ,
-                               endPoint: show ? .bottomTrailing : .bottomLeading )
+                RadialGradient(gradient: Gradient(colors: [Color.white.opacity(0.5), Color.black]),
+                               center: .center,
+                               startRadius: 16,
+                               endRadius: show ? 18 : 32)
             )
             .onAppear {
-                withAnimation(Animation.easeInOut.speed(0.5).repeatForever()){
+                withAnimation(Animation.easeInOut.speed(0.5).repeatForever(autoreverses: true)){
                     self.show.toggle()
                 }
             }

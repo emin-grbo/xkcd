@@ -9,18 +9,16 @@ struct ComicPage: View {
         ZStack(alignment: .center) {
             ScrollView(Axis.Set.horizontal, showsIndicators: true) {
                 AsyncImage(url: comic.imgUrl) { image in
+                    withAnimation(.easeInOut) {
                     image
                         .resizable()
                         .animation(.easeInOut, value: 10)
                         .aspectRatio(contentMode: zoomedIn ? .fit : .fill)
                         .if(zoomedIn) { $0.scaledToFit() }
+                    }
                 } placeholder: {
                     PlaceHolderView()
                 }
-                .background(
-                    RoundedRectangle(cornerRadius: 16)
-                        .fill(Color.gray)
-                )
                 .frame(width: zoomedIn ? UIScreen.screenWidth : nil)
                 .onTapGesture {
                     withAnimation(.easeInOut) {

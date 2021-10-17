@@ -27,8 +27,8 @@ struct ComicBrowser: View {
         .onAppear {
 //            mainOO.fetchLatestComic()
 //            mainOO.fetch(testCase: .tall)
-//            mainOO.fetch(testCase: .wide)
-            mainOO.fetch(testCase: .real)
+            mainOO.fetch(testCase: .wide)
+//            mainOO.fetch(testCase: .real)
         }
     }
 }
