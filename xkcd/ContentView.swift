@@ -8,6 +8,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             ComicBrowser()
+                .environment(\.managedObjectContext, viewContext)
                 .tabItem {
                     Image(systemName: "text.book.closed.fill")
                     Text("Comics")

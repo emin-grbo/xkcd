@@ -3,14 +3,16 @@ import SwiftUI
 
 class ComicBrowserOO: ObservableObject {
     
-    private let comicService: ComicService
-    private var cancellables = Set<AnyCancellable>()
-    
     // main data obhject
-    private var mainDO = ComicBrowserDO()
+    var mainDO: ComicBrowserDO = ComicBrowserDO()
     
     // published data objects
     @Published var comic: Comic?
+    
+    private let comicService: ComicService
+    private var cancellables = Set<AnyCancellable>()
+    @AppStorage("latestComic") var latestComic = 1
+    @AppStorage("currentComic") var currentComic = 0
     
     init(service: ComicService) {
         self.comicService = service
@@ -59,6 +61,13 @@ extension ComicBrowserOO {
         }
     }
     // ------------------------------------------------------------------
+    func update(with data: Comic) {
+        comic = data
+        currentComic = data.num
+    }
+    
+    // used for onAppear method as a refresh
+    
     
     func fetchLatestComic() {
         comicService.fetchLatestComic()
@@ -66,7 +75,8 @@ extension ComicBrowserOO {
             .sink { _ in
             } receiveValue: { [weak self] result in
                 guard let self = self else { return }
-                self.comic = result
+                self.update(with: result)
+                self.latestComic = result.num
             }
             .store(in: &cancellables)
     }
@@ -77,11 +87,36 @@ extension ComicBrowserOO {
             .sink { _ in
             } receiveValue: { [weak self] result in
                 guard let self = self else { return }
-                self.comic = result
+                self.update(with: result)
             }
             .store(in: &cancellables)
     }
 }
 
+// MARK: Paging
+enum Direction {
+    case previous
+    case next
+}
+
+extension ComicBrowserOO {
+    func fetch(_ direction: Direction) {
+        guard currentComic <= latestComic else {
+            fetchLatestComic()
+            return
+        }
+        
+        let comicId = direction == .previous ? currentComic - 1 : currentComic + 1
+        
+        comicService.fetchComic(withId: comicId)
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+            } receiveValue: { [weak self] result in
+                guard let self = self else { return }
+                self.update(with: result)
+            }
+            .store(in: &cancellables)
+    }
+}
 
 

@@ -2,6 +2,8 @@ import SwiftUI
 
 struct ControlsView: View {
     
+    @ObservedObject var observable: ComicBrowserOO
+    
     var body: some View {
         HStack(spacing: 24) {
             
@@ -22,14 +24,16 @@ struct ControlsView: View {
             Spacer()
             
             Button {
-                print("TappedFav")
+                print("TappedLeft")
+                observable.fetch(.previous)
             } label: {
                 SFImage(sfIcon: .left)
             }
             .buttonStyle(AnimatedTapButtonStyle())
             
             Button {
-                print("TappedFav")
+                print("TappedRight")
+                observable.fetch(.next)
             } label: {
                 SFImage(sfIcon: .right)
             }

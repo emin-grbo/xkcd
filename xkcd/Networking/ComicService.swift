@@ -30,7 +30,7 @@ private extension ComicService {
             case .latest:
                 return makeURL()
             case .withId(let comicID):
-                return makeURL(comicId: "\(comicID)/")
+                return makeURL(comicId: "/\(comicID)")
             }
         }
         

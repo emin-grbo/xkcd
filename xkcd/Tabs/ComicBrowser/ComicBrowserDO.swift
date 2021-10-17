@@ -2,6 +2,8 @@ import CoreData
 import SwiftUI
 
 class ComicBrowserDO {
+    #warning("Coredata and viewContext to be cleaned up. Separate into a Persistency class?")
+    @Environment(\.managedObjectContext) private var viewContext
     
     static let shared = ComicBrowserDO()
     

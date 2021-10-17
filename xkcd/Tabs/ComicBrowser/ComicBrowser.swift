@@ -21,13 +21,16 @@ struct ComicBrowser: View {
             ComicPage(comic: mainOO.getComic())
             
             Spacer()
-            ControlsView()
+            ControlsView(observable: mainOO)
 
         }
         .onAppear {
+            if mainOO.comic == nil {
+                mainOO.fetchLatestComic()
+            }
 //            mainOO.fetchLatestComic()
 //            mainOO.fetch(testCase: .tall)
-            mainOO.fetch(testCase: .wide)
+//            mainOO.fetch(testCase: .wide)
 //            mainOO.fetch(testCase: .real)
         }
     }
