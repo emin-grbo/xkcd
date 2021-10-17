@@ -15,7 +15,7 @@ struct ComicPage: View {
                         .if(zoomedIn) { $0.scaledToFit() }
                         
                 } placeholder: {
-                    Color.red
+                    PlaceHolderView()
                 }
                 .background(
                     RoundedRectangle(cornerRadius: 16)
