@@ -6,8 +6,15 @@ struct ComicBrowser: View {
     
     var body: some View {
         VStack {
-            Text(mainOO.getNumber())
-            Text(mainOO.getTitle())
+            VStack {
+                Text(mainOO.getNumber())
+                    .font(.subTitle_18)
+                Text(mainOO.getTitle())
+                    .font(.title_30)
+            }
+            .padding(.bottom, 16)
+            .frame(width: UIScreen.screenWidth)
+            .foregroundColor(Color.baseAccent)
             
             Spacer()
             

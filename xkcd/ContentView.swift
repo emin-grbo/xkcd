@@ -9,13 +9,17 @@ struct ContentView: View {
         TabView {
             ComicBrowser()
                 .tabItem {
-                    Image(systemName: "circle")
+                    Image(systemName: "text.book.closed.fill")
+                    Text("Comics")
                 }
             Favorites()
                 .tabItem {
-                    Image(systemName: "circle")
+                    Image(systemName: "heart.text.square.fill")
+                    Text("Favorites")
                 }
         }
+        .preferredColorScheme(.dark)
+        .accentColor(.white)
     }
 }
 

@@ -1,6 +1,10 @@
 import SwiftUI
 
 extension Color {
+    static var baseAccent:      Color { return Color(hex: "EDEDED") }
+}
+
+extension Color {
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0

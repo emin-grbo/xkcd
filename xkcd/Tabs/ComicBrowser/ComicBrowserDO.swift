@@ -37,20 +37,6 @@ class ComicBrowserDO {
         return result
     }()
     
-    func createSampleData() -> [Comic] {
-        return [
-            Comic(num: 613,
-                  title: "Threesome",
-                  img: "https://imgs.xkcd.com/comics/threesome.png"),
-            Comic(num: 614,
-                  title: "Woodpecker",
-                  img: "https://imgs.xkcd.com/comics/woodpecker.png"),
-            Comic(num: 615,
-                  title: "Avoidance",
-                  img: "https://imgs.xkcd.com/comics/avoidance.png")
-        ]
-    }
-    
     func save() {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()

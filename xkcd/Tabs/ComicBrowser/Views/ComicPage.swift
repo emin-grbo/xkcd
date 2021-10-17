@@ -11,9 +11,9 @@ struct ComicPage: View {
                 AsyncImage(url: comic.imgUrl) { image in
                     image
                         .resizable()
+                        .animation(.easeInOut, value: 10)
                         .aspectRatio(contentMode: zoomedIn ? .fit : .fill)
                         .if(zoomedIn) { $0.scaledToFit() }
-                        
                 } placeholder: {
                     PlaceHolderView()
                 }
@@ -23,7 +23,9 @@ struct ComicPage: View {
                 )
                 .frame(width: zoomedIn ? UIScreen.screenWidth : nil)
                 .onTapGesture {
-                    zoomedIn.toggle()
+                    withAnimation(.easeInOut) {
+                        zoomedIn.toggle()
+                    }
                 }
             }
             .frame(width: UIScreen.screenWidth)
