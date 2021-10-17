@@ -1,9 +1,9 @@
 import Foundation
 
-struct Comic {
+struct Comic: Identifiable {
+    
     let num: Int
     let title: String
-    let alt: String
     let img: String
 
     // Id is needed if used within a list
@@ -17,6 +17,7 @@ struct Comic {
 }
 
 // other model properties which are not needed for the MVP
+//let alt: String
 //let day: String
 //let month: String
 //let year: String

@@ -24,6 +24,7 @@ struct ComicPage: View {
                     zoomedIn.toggle()
                 }
             }
+            .frame(width: UIScreen.screenWidth)
         }
     }
 }

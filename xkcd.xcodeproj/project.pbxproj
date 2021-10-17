@@ -11,7 +11,6 @@
 		D7FB5B0A271AEE1000E77506 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B09271AEE1000E77506 /* ContentView.swift */; };
 		D7FB5B0C271AEE1200E77506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7FB5B0B271AEE1200E77506 /* Assets.xcassets */; };
 		D7FB5B0F271AEE1200E77506 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7FB5B0E271AEE1200E77506 /* Preview Assets.xcassets */; };
-		D7FB5B11271AEE1200E77506 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B10271AEE1200E77506 /* Persistence.swift */; };
 		D7FB5B14271AEE1200E77506 /* xkcd.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B12271AEE1200E77506 /* xkcd.xcdatamodeld */; };
 		D7FB5B1E271AEE1300E77506 /* xkcdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B1D271AEE1300E77506 /* xkcdTests.swift */; };
 		D7FB5B28271AEE1300E77506 /* xkcdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B27271AEE1300E77506 /* xkcdUITests.swift */; };
@@ -24,6 +23,8 @@
 		D7FB5B43271B62FA00E77506 /* UIScreen+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B42271B62FA00E77506 /* UIScreen+Ex.swift */; };
 		D7FB5B45271B646F00E77506 /* ComicPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B44271B646F00E77506 /* ComicPage.swift */; };
 		D7FB5B47271B6EA400E77506 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B46271B6EA400E77506 /* ControlsView.swift */; };
+		D7FB5B49271B6F7A00E77506 /* ComicBrowserOO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B48271B6F7A00E77506 /* ComicBrowserOO.swift */; };
+		D7FB5B4B271B773300E77506 /* ComicBrowserDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5B4A271B773300E77506 /* ComicBrowserDO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,6 @@
 		D7FB5B09271AEE1000E77506 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D7FB5B0B271AEE1200E77506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7FB5B0E271AEE1200E77506 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D7FB5B10271AEE1200E77506 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D7FB5B13271AEE1200E77506 /* xkcd.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = xkcd.xcdatamodel; sourceTree = "<group>"; };
 		D7FB5B19271AEE1300E77506 /* xkcdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xkcdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FB5B1D271AEE1300E77506 /* xkcdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcdTests.swift; sourceTree = "<group>"; };
@@ -64,6 +64,8 @@
 		D7FB5B42271B62FA00E77506 /* UIScreen+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ex.swift"; sourceTree = "<group>"; };
 		D7FB5B44271B646F00E77506 /* ComicPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicPage.swift; sourceTree = "<group>"; };
 		D7FB5B46271B6EA400E77506 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		D7FB5B48271B6F7A00E77506 /* ComicBrowserOO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicBrowserOO.swift; sourceTree = "<group>"; };
+		D7FB5B4A271B773300E77506 /* ComicBrowserDO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicBrowserDO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D799ACEF271C17C400D5D1DD /* ComicBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				D7FB5B39271B16DE00E77506 /* ComicBrowser.swift */,
+				D7FB5B48271B6F7A00E77506 /* ComicBrowserOO.swift */,
+				D7FB5B4A271B773300E77506 /* ComicBrowserDO.swift */,
+			);
+			path = ComicBrowser;
+			sourceTree = "<group>";
+		};
 		D7FB5AFB271AEE1000E77506 = {
 			isa = PBXGroup;
 			children = (
@@ -116,13 +128,12 @@
 			children = (
 				D7FB5B07271AEE1000E77506 /* xkcdApp.swift */,
 				D7FB5B09271AEE1000E77506 /* ContentView.swift */,
-				D7FB5B39271B16DE00E77506 /* ComicBrowser.swift */,
+				D799ACEF271C17C400D5D1DD /* ComicBrowser */,
 				D7FB5B44271B646F00E77506 /* ComicPage.swift */,
 				D7FB5B46271B6EA400E77506 /* ControlsView.swift */,
-				D7FB5B3F271B401B00E77506 /* Models */,
 				D7FB5B3B271B191300E77506 /* Favorites.swift */,
+				D7FB5B3F271B401B00E77506 /* Models */,
 				D7FB5B38271B15F400E77506 /* Extensions */,
-				D7FB5B10271AEE1200E77506 /* Persistence.swift */,
 				D7FB5B0B271AEE1200E77506 /* Assets.xcassets */,
 				D7FB5B12271AEE1200E77506 /* xkcd.xcdatamodeld */,
 				D7FB5B0D271AEE1200E77506 /* Preview Content */,
@@ -303,7 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7FB5B11271AEE1200E77506 /* Persistence.swift in Sources */,
+				D7FB5B49271B6F7A00E77506 /* ComicBrowserOO.swift in Sources */,
 				D7FB5B3E271B3F7200E77506 /* Comic.swift in Sources */,
 				D7FB5B45271B646F00E77506 /* ComicPage.swift in Sources */,
 				D7FB5B0A271AEE1000E77506 /* ContentView.swift in Sources */,
@@ -311,6 +322,7 @@
 				D7FB5B08271AEE1000E77506 /* xkcdApp.swift in Sources */,
 				D7FB5B14271AEE1200E77506 /* xkcd.xcdatamodeld in Sources */,
 				D7FB5B3C271B191300E77506 /* Favorites.swift in Sources */,
+				D7FB5B4B271B773300E77506 /* ComicBrowserDO.swift in Sources */,
 				D7FB5B43271B62FA00E77506 /* UIScreen+Ex.swift in Sources */,
 				D7FB5B3A271B16DE00E77506 /* ComicBrowser.swift in Sources */,
 				D7FB5B37271AF31900E77506 /* Colors+Ex.swift in Sources */,

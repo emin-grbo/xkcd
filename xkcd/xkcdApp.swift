@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct xkcdApp: App {
-    let persistenceController = PersistenceController.shared
+    let persistenceController = ComicBrowserDO.shared
 
     var body: some Scene {
         WindowGroup {
