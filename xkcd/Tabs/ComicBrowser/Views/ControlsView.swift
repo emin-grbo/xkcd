@@ -3,12 +3,14 @@ import SwiftUI
 struct ControlsView: View {
     
     @ObservedObject var observable: ComicBrowserOO
+    @State var isShowingExplanation = false
     
     var body: some View {
         HStack(spacing: 24) {
             
             Button {
                 print("TappedInfo")
+                isShowingExplanation.toggle()
             } label: {
                 SFImage(sfIcon: .info)
             }
@@ -44,6 +46,9 @@ struct ControlsView: View {
         .padding(.horizontal, 32)
         .foregroundColor(Color.baseAccent)
         .buttonStyle(AnimatedTapButtonStyle())
+        .sheet(isPresented: $isShowingExplanation) {
+            ExplanationView(observable: observable)
+        }
     }
 }
 

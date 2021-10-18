@@ -1,5 +1,6 @@
 import Combine
 import SwiftUI
+import SwiftSoup
 
 class ComicBrowserOO: ObservableObject {
     
@@ -96,6 +97,38 @@ extension ComicBrowserOO {
                 self.update(with: result)
             }
             .store(in: &cancellables)
+    }
+}
+
+// MARK: HTML Parsing
+extension ComicBrowserOO {
+    func getExplanationString() -> String {
+        let formattedTitle = comic?.title.split(separator: " ").joined(separator: "_") ?? ""
+        let urlTitle = "_" + formattedTitle
+        let urlArgument = "\(comic?.num ?? 0):\(urlTitle)"
+        
+        if let url = URL(string: "https://www.explainxkcd.com/wiki/index.php/\(urlArgument)") {
+            do {
+                let contents = try String(contentsOf: url)
+                do {
+                    let doc: Document = try SwiftSoup.parse(contents)
+                    for item in try doc.getElementsByClass("mw-parser-output") {
+                        let json = try item.getElementsByTag("p")
+                        let extractedHTMLString = try json.html()
+                        let doc: Document = try SwiftSoup.parse(extractedHTMLString)
+                        let extractedString =  try doc.text()
+                        return extractedString
+                    }
+                } catch {
+                    print("FAILED TO PARSE HTML")
+                }
+            } catch {
+                print("FAILED TO LOAD CONTENT")
+            }
+        } else {
+            print("BAD URL")
+        }
+        return ""
     }
 }
 

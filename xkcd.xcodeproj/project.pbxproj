@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D753BAC9271E125B0002ADB8 /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753BAC8271E125B0002ADB8 /* ExplanationView.swift */; };
 		D799ACF3271C59E800D5D1DD /* ComicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799ACF2271C59E800D5D1DD /* ComicService.swift */; };
 		D799ACF5271C5A1B00D5D1DD /* ComicServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799ACF4271C5A1B00D5D1DD /* ComicServiceProtocol.swift */; };
 		D799ACF7271C5A3C00D5D1DD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799ACF6271C5A3C00D5D1DD /* APIError.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D753BAC8271E125B0002ADB8 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
 		D799ACF2271C59E800D5D1DD /* ComicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicService.swift; sourceTree = "<group>"; };
 		D799ACF4271C5A1B00D5D1DD /* ComicServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicServiceProtocol.swift; sourceTree = "<group>"; };
 		D799ACF6271C5A3C00D5D1DD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				D7FB5B44271B646F00E77506 /* ComicPage.swift */,
 				D7FB5B46271B6EA400E77506 /* ControlsView.swift */,
+				D753BAC8271E125B0002ADB8 /* ExplanationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				D7FB5B3E271B3F7200E77506 /* Comic.swift in Sources */,
 				D7FB5B45271B646F00E77506 /* ComicPage.swift in Sources */,
 				D7FB5B0A271AEE1000E77506 /* ContentView.swift in Sources */,
+				D753BAC9271E125B0002ADB8 /* ExplanationView.swift in Sources */,
 				D7FB5B47271B6EA400E77506 /* ControlsView.swift in Sources */,
 				D7FB5B08271AEE1000E77506 /* xkcdApp.swift in Sources */,
 				D7FB5B14271AEE1200E77506 /* xkcd.xcdatamodeld in Sources */,
