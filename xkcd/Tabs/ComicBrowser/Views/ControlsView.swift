@@ -13,7 +13,6 @@ struct ControlsView: View {
                 SFImage(sfIcon: .info)
             }
             
-            
             Button {
                 print("TappedFav")
             } label: {

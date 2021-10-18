@@ -11,6 +11,7 @@ class ComicBrowserOO: ObservableObject {
     
     private let comicService: ComicService
     private var cancellables = Set<AnyCancellable>()
+    
     @AppStorage("latestComic") var latestComic = 1
     @AppStorage("currentComic") var currentComic = 0
     
@@ -27,7 +28,7 @@ class ComicBrowserOO: ObservableObject {
     }
     
     func getTitle() -> String {
-        return comic?.title ?? "No Comic Loaded"
+        return comic?.title ?? "Loading comic..."
     }
     
     func getImageUrl() -> URL? {
@@ -37,37 +38,11 @@ class ComicBrowserOO: ObservableObject {
 
 // MARK: Networking
 extension ComicBrowserOO {
-    
-    // ------------------------------------------------------------------
-#warning("MOCK data - remove")
-    enum TestCases {
-        case wide
-        case tall
-        case real
-    }
-    
-    func fetch(testCase: TestCases) {
-        switch testCase {
-        case .wide:
-            comic = Comic(num: 613,
-                          title: "Threesome",
-                          img: "https://imgs.xkcd.com/comics/threesome.png")
-        case .tall:
-            comic = Comic(num: 614,
-                          title: "Woodpecker",
-                          img: "https://imgs.xkcd.com/comics/woodpecker.png")
-        case .real:
-            fetchLatestComic()
-        }
-    }
-    // ------------------------------------------------------------------
+
     func update(with data: Comic) {
         comic = data
         currentComic = data.num
     }
-    
-    // used for onAppear method as a refresh
-    
     
     func fetchLatestComic() {
         comicService.fetchLatestComic()
@@ -81,7 +56,7 @@ extension ComicBrowserOO {
             .store(in: &cancellables)
     }
     
-    func fetchComic(with id: Int) {
+    func fetchComic(withID id: Int) {
         comicService.fetchComic(withId: id)
             .receive(on: DispatchQueue.main)
             .sink { _ in
@@ -101,13 +76,18 @@ enum Direction {
 
 extension ComicBrowserOO {
     func fetch(_ direction: Direction) {
-        guard currentComic <= latestComic else {
+        
+        let comicId = direction == .previous ? currentComic - 1 : currentComic + 1
+        
+        guard comicId < latestComic else {
             fetchLatestComic()
             return
         }
         
-        let comicId = direction == .previous ? currentComic - 1 : currentComic + 1
-        
+        withAnimation {
+            comic = nil
+        }
+
         comicService.fetchComic(withId: comicId)
             .receive(on: DispatchQueue.main)
             .sink { _ in

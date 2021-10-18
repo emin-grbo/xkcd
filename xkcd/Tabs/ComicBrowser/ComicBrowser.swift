@@ -2,14 +2,14 @@ import SwiftUI
 
 struct ComicBrowser: View {
     
-    @StateObject private var mainOO = ComicBrowserOO(service: ComicService())
+    @StateObject private var observable = ComicBrowserOO(service: ComicService())
     
     var body: some View {
         VStack {
             VStack {
-                Text(mainOO.getNumber())
+                Text(observable.getNumber())
                     .font(.subTitle_18)
-                Text(mainOO.getTitle())
+                Text(observable.getTitle())
                     .font(.title_30)
             }
             .padding(.bottom, 16)
@@ -18,20 +18,18 @@ struct ComicBrowser: View {
             
             Spacer()
             
-            ComicPage(comic: mainOO.getComic())
+            ComicPage(comic: observable.getComic())
             
             Spacer()
-            ControlsView(observable: mainOO)
+            ControlsView(observable: observable)
 
         }
         .onAppear {
-            if mainOO.comic == nil {
-                mainOO.fetchLatestComic()
+            if observable.currentComic == 0 {
+                observable.fetchLatestComic()
+            } else {
+                observable.fetchComic(withID: observable.currentComic)
             }
-//            mainOO.fetchLatestComic()
-//            mainOO.fetch(testCase: .tall)
-//            mainOO.fetch(testCase: .wide)
-//            mainOO.fetch(testCase: .real)
         }
     }
 }
