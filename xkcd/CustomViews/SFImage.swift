@@ -7,6 +7,7 @@ enum SFIcon: String {
     case right = "arrowtriangle.right.square.fill"
     case search = "doc.text.fill.viewfinder"
     case newsPaper = "newspaper.fill"
+    case share = "square.and.arrow.up"
 }
 
 struct SFImage: View {
