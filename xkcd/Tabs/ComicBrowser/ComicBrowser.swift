@@ -6,11 +6,13 @@ struct ComicBrowser: View {
     
     var body: some View {
         VStack {
-            VStack {
-                Text(observable.getNumber())
-                    .font(.subTitle_18)
-                Text(observable.getTitle())
-                    .font(.title_30)
+            HStack {
+                VStack {
+                    Text(observable.getNumber())
+                        .font(.subTitle_18)
+                    Text(observable.getTitle())
+                        .font(.title_30)
+                }
             }
             .padding(.bottom, 16)
             .frame(width: UIScreen.screenWidth)
@@ -22,7 +24,6 @@ struct ComicBrowser: View {
             
             Spacer()
             ControlsView(observable: observable)
-
         }
         .onAppear {
             if observable.currentComic == 0 {

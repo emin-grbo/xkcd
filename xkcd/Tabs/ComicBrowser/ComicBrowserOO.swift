@@ -4,7 +4,7 @@ import SwiftSoup
 
 class ComicBrowserOO: ObservableObject {
     
-    // main data obhject
+    // main data object
     var mainDO: ComicBrowserDO = ComicBrowserDO()
     
     // published data objects
@@ -34,6 +34,14 @@ class ComicBrowserOO: ObservableObject {
     
     func getImageUrl() -> URL? {
         return comic?.imgUrl
+    }
+    
+    func comicNumbers() -> [String] {
+        var numbers: [String] = []
+        for item in 1...latestComic {
+            numbers.append("\(item)")
+        }
+        return numbers
     }
 }
 

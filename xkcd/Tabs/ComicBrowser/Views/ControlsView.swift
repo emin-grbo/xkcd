@@ -4,6 +4,7 @@ struct ControlsView: View {
     
     @ObservedObject var observable: ComicBrowserOO
     @State var isShowingExplanation = false
+    @State var showSearch = false
     
     var body: some View {
         HStack(spacing: 24) {
@@ -12,36 +13,41 @@ struct ControlsView: View {
                 print("TappedInfo")
                 isShowingExplanation.toggle()
             } label: {
-                SFImage(sfIcon: .info)
+                SFImage(.info)
             }
             
             Button {
                 print("TappedFav")
             } label: {
-                SFImage(sfIcon: .favorite)
+                SFImage(.favorite)
             }
-            .buttonStyle(AnimatedTapButtonStyle())
 
+            Spacer()
+            
+            Button {
+                showSearch.toggle()
+                print("TappedFav")
+            } label: {
+                SFImage(.search)
+            }
+            
             Spacer()
             
             Button {
                 print("TappedLeft")
                 observable.fetch(.previous)
             } label: {
-                SFImage(sfIcon: .left)
+                SFImage(.left)
             }
-            .buttonStyle(AnimatedTapButtonStyle())
             
             Button {
                 print("TappedRight")
                 observable.fetch(.next)
             } label: {
-                SFImage(sfIcon: .right)
+                SFImage(.right)
             }
-            .buttonStyle(AnimatedTapButtonStyle())
         }
         .font(.headline)
-        .frame(height: 40)
         .padding(.vertical, 32)
         .padding(.horizontal, 32)
         .foregroundColor(Color.baseAccent)
@@ -49,14 +55,8 @@ struct ControlsView: View {
         .sheet(isPresented: $isShowingExplanation) {
             ExplanationView(observable: observable)
         }
-    }
-}
-
-struct AnimatedTapButtonStyle: ButtonStyle {
-    func makeBody(configuration: Self.Configuration) -> some View {
-        HStack {
-        configuration.label
-            .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
+        .sheet(isPresented: $showSearch) {
+            SearchPickerView(observable: observable)
         }
     }
 }

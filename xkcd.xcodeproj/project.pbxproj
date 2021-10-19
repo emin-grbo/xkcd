@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D753BAC9271E125B0002ADB8 /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753BAC8271E125B0002ADB8 /* ExplanationView.swift */; };
+		D753BACB271E24460002ADB8 /* SearchPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753BACA271E24460002ADB8 /* SearchPickerView.swift */; };
+		D753BACD271E369B0002ADB8 /* AnimatedTapButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753BACC271E369B0002ADB8 /* AnimatedTapButtonStyle.swift */; };
+		D753BAD2271ED0930002ADB8 /* TextProminentButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753BAD1271ED0930002ADB8 /* TextProminentButtonStyle.swift */; };
+		D753BAD4271EE0AD0002ADB8 /* SearchTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753BAD3271EE0AD0002ADB8 /* SearchTextfield.swift */; };
 		D799ACF3271C59E800D5D1DD /* ComicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799ACF2271C59E800D5D1DD /* ComicService.swift */; };
 		D799ACF5271C5A1B00D5D1DD /* ComicServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799ACF4271C5A1B00D5D1DD /* ComicServiceProtocol.swift */; };
 		D799ACF7271C5A3C00D5D1DD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799ACF6271C5A3C00D5D1DD /* APIError.swift */; };
@@ -55,6 +59,10 @@
 
 /* Begin PBXFileReference section */
 		D753BAC8271E125B0002ADB8 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
+		D753BACA271E24460002ADB8 /* SearchPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPickerView.swift; sourceTree = "<group>"; };
+		D753BACC271E369B0002ADB8 /* AnimatedTapButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTapButtonStyle.swift; sourceTree = "<group>"; };
+		D753BAD1271ED0930002ADB8 /* TextProminentButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextProminentButtonStyle.swift; sourceTree = "<group>"; };
+		D753BAD3271EE0AD0002ADB8 /* SearchTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextfield.swift; sourceTree = "<group>"; };
 		D799ACF2271C59E800D5D1DD /* ComicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicService.swift; sourceTree = "<group>"; };
 		D799ACF4271C5A1B00D5D1DD /* ComicServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicServiceProtocol.swift; sourceTree = "<group>"; };
 		D799ACF6271C5A3C00D5D1DD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -112,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D753BACE271E36C50002ADB8 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				D753BACC271E369B0002ADB8 /* AnimatedTapButtonStyle.swift */,
+				D753BAD1271ED0930002ADB8 /* TextProminentButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		D799ACEF271C17C400D5D1DD /* ComicBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +174,7 @@
 				D7FB5B44271B646F00E77506 /* ComicPage.swift */,
 				D7FB5B46271B6EA400E77506 /* ControlsView.swift */,
 				D753BAC8271E125B0002ADB8 /* ExplanationView.swift */,
+				D753BACA271E24460002ADB8 /* SearchPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +184,7 @@
 			children = (
 				D799ACFD271C72D000D5D1DD /* PlaceholderView.swift */,
 				D799AD06271CC69300D5D1DD /* SFImage.swift */,
+				D753BAD3271EE0AD0002ADB8 /* SearchTextfield.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -198,6 +217,7 @@
 				D7FB5B09271AEE1000E77506 /* ContentView.swift */,
 				D799ACF8271C5A5000D5D1DD /* Networking */,
 				D799AD00271C732200D5D1DD /* Tabs */,
+				D753BACE271E36C50002ADB8 /* Styles */,
 				D799AD02271C735A00D5D1DD /* CustomViews */,
 				D7FB5B3F271B401B00E77506 /* Models */,
 				D7FB5B38271B15F400E77506 /* Extensions */,
@@ -393,7 +413,9 @@
 				D7FB5B3E271B3F7200E77506 /* Comic.swift in Sources */,
 				D7FB5B45271B646F00E77506 /* ComicPage.swift in Sources */,
 				D7FB5B0A271AEE1000E77506 /* ContentView.swift in Sources */,
+				D753BACD271E369B0002ADB8 /* AnimatedTapButtonStyle.swift in Sources */,
 				D753BAC9271E125B0002ADB8 /* ExplanationView.swift in Sources */,
+				D753BAD2271ED0930002ADB8 /* TextProminentButtonStyle.swift in Sources */,
 				D7FB5B47271B6EA400E77506 /* ControlsView.swift in Sources */,
 				D7FB5B08271AEE1000E77506 /* xkcdApp.swift in Sources */,
 				D7FB5B14271AEE1200E77506 /* xkcd.xcdatamodeld in Sources */,
@@ -407,7 +429,9 @@
 				D7FB5B3A271B16DE00E77506 /* ComicBrowser.swift in Sources */,
 				D799ACF7271C5A3C00D5D1DD /* APIError.swift in Sources */,
 				D799AD04271CAF5B00D5D1DD /* Font+Ex.swift in Sources */,
+				D753BAD4271EE0AD0002ADB8 /* SearchTextfield.swift in Sources */,
 				D7FB5B37271AF31900E77506 /* Colors+Ex.swift in Sources */,
+				D753BACB271E24460002ADB8 /* SearchPickerView.swift in Sources */,
 				D7FB5B41271B627200E77506 /* OptionalModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,7 +660,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZQCK5WLKEQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -661,7 +685,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZQCK5WLKEQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

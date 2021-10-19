@@ -2,20 +2,25 @@ import SwiftUI
 
 struct PlaceHolderView : View {
     
-    @State var show = false
+    @State var isLoading = false
     
     var body : some View {
-        Rectangle()
-            .fill(
-                RadialGradient(gradient: Gradient(colors: [Color.white.opacity(0.5), Color.black]),
-                               center: .center,
-                               startRadius: 16,
-                               endRadius: show ? 18 : 32)
-            )
-            .onAppear {
-                withAnimation(Animation.easeInOut.speed(0.5).repeatForever(autoreverses: true)){
-                    self.show.toggle()
+        ZStack {
+            Circle()
+                .stroke(Color(.gray).opacity(0.5), lineWidth: 14)
+                .frame(width: 100, height: 100)
+                .blur(radius: 5)
+            Circle()
+                .trim(from: 0, to: 0.2)
+                .stroke(Color.white, lineWidth: 7)
+                .frame(width: 100, height: 100)
+                .rotationEffect(Angle(degrees: isLoading ? 360 : 0))
+                .animation(.easeInOut.speed(0.8).repeatForever(autoreverses: true), value: isLoading)
+                .onAppear() {
+                    self.isLoading = true
                 }
-            }
+        }
+        .padding()
     }
 }
+
