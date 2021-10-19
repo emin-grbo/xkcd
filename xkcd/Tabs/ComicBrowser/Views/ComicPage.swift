@@ -10,12 +10,11 @@ struct ComicPage: View {
             ScrollView(Axis.Set.horizontal, showsIndicators: false) {
                 AsyncImage(url: comic.imgUrl) { image in
                     withAnimation(.easeInOut) {
-                    image
-                        .resizable()
-                        .animation(.easeInOut, value: 10)
-                        .aspectRatio(contentMode: zoomedOut ? .fit : .fill)
-                        .if(zoomedOut) { $0.scaledToFit() }
-                        
+                        image
+                            .resizable()
+                            .animation(.easeInOut, value: 10)
+                            .aspectRatio(contentMode: zoomedOut ? .fit : .fill)
+                            .if(zoomedOut) { $0.scaledToFit() }
                     }
                 } placeholder: {
                     PlaceHolderView()

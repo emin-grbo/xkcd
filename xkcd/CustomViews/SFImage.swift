@@ -11,15 +11,17 @@ enum SFIcon: String {
 
 struct SFImage: View {
     let sfIcon: SFIcon
+    let prefferedSize: CGFloat
     
-    init(_ sfIcon: SFIcon) {
+    init(_ sfIcon: SFIcon, prefferedSize: CGFloat = 40) {
         self.sfIcon = sfIcon
+        self.prefferedSize = prefferedSize
     }
     
     var body: some View {
         Image(systemName: sfIcon.rawValue)
             .resizable()
             .aspectRatio(1, contentMode: .fit)
-            .frame(height: 40)
+            .frame(height: prefferedSize)
     }
 }

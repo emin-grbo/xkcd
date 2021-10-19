@@ -7,7 +7,7 @@ struct SearchTextfield: View {
     
     var body: some View {
         HStack {
-            SFImage(.newsPaper)
+            SFImage(.newsPaper, prefferedSize: 24)
             TextField(textFieldLabel, text: $selection)
                 .multilineTextAlignment(.center)
                 .padding(.trailing, 32)
