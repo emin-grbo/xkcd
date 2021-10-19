@@ -2,9 +2,10 @@ import SwiftUI
 
 struct ControlsView: View {
     
-    @ObservedObject var observable: ComicBrowserOO
+    @ObservedObject var observable: MainObservableObject
     @State var isShowingExplanation = false
     @State var showSearch = false
+    let browserType: ComicBrowserType
     
     var body: some View {
         HStack(spacing: 24) {
@@ -18,8 +19,11 @@ struct ControlsView: View {
             
             Button {
                 print("TappedFav")
+                observable.favoritesButtonTapped(type: browserType)
             } label: {
                 SFImage(.favorite)
+                    .animation(.spring(), value: observable.isFavorited())
+                    .foregroundColor(observable.isFavorited() ? .red : .white)
             }
 
             Spacer()
@@ -29,20 +33,20 @@ struct ControlsView: View {
                 print("TappedFav")
             } label: {
                 SFImage(.search)
-            }
+            }.opacity(observable.hasSearch(type: browserType) ? 1 : 0)
             
             Spacer()
             
             Button {
                 print("TappedLeft")
-                observable.fetch(.previous)
+                observable.get(.previous, type: browserType)
             } label: {
                 SFImage(.left)
             }
             
             Button {
                 print("TappedRight")
-                observable.fetch(.next)
+                observable.get(.next, type: browserType)
             } label: {
                 SFImage(.right)
             }

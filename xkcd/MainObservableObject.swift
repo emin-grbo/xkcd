@@ -2,14 +2,15 @@ import Combine
 import SwiftUI
 import SwiftSoup
 
-class ComicBrowserOO: ObservableObject {
+class MainObservableObject: ObservableObject {
     
     // main data object
-    var mainDO: ComicBrowserDO = ComicBrowserDO()
+    var mainDataObject: MainDataObject = MainDataObject.shared
     
     // published data objects
     @Published var comic: Comic?
     
+    private var favoriteComics: [Comic] = []
     private let comicService: ComicService
     private var cancellables = Set<AnyCancellable>()
     
@@ -43,17 +44,26 @@ class ComicBrowserOO: ObservableObject {
         }
         return numbers
     }
+    
+    func hasSearch(type: ComicBrowserType) -> Bool {
+        switch type {
+        case .remote:
+            return true
+        case .favorite:
+            return false
+        }
+    }
 }
 
 // MARK: Networking
-extension ComicBrowserOO {
+extension MainObservableObject {
 
     func update(with data: Comic) {
         comic = data
         currentComic = data.num
     }
     
-    func fetchLatestComic() {
+    func getLatestComic() {
         comicService.fetchLatestComic()
             .receive(on: DispatchQueue.main)
             .sink { _ in
@@ -65,8 +75,8 @@ extension ComicBrowserOO {
             .store(in: &cancellables)
     }
     
-    func fetchComic(withID id: Int) {
-        comicService.fetchComic(withId: id)
+    func getComic(withID id: Int) {
+        comicService.getComic(withId: id)
             .receive(on: DispatchQueue.main)
             .sink { _ in
             } receiveValue: { [weak self] result in
@@ -74,6 +84,64 @@ extension ComicBrowserOO {
                 self.update(with: result)
             }
             .store(in: &cancellables)
+    }
+    
+    func get(_ direction: Direction, type: ComicBrowserType) {
+        switch type {
+        case .remote:
+            get(direction)
+        case .favorite:
+            fetch(direction)
+        }
+    }
+}
+
+//MARK: Local data fetch
+extension MainObservableObject {
+    func fetchFavorites() {
+        favoriteComics = []
+        let favorites = mainDataObject.fetchAllFavoriteComics()
+        for fav in favorites {
+            let favComic = Comic(num: Int(fav.num),
+                                 title: fav.title ?? "",
+                                 img: fav.img ?? "")
+            favoriteComics.append(favComic)
+        }
+        comic = favoriteComics.first
+    }
+    
+    func fetch(_ direction: Direction) {
+        if var index = favoriteComics.firstIndex(where: {$0 == comic}) {
+            index = direction == .previous ? index - 1 : index + 1
+            
+            guard index < favoriteComics.count, index >= 0 else {
+                comic = direction == .previous ? favoriteComics.last : favoriteComics.first
+                return
+            }
+            comic = favoriteComics[index]
+        }
+    }
+    
+    func fetchLatestComic() {
+        comic = favoriteComics.last
+    }
+    
+    func favoritesButtonTapped(type: ComicBrowserType) {
+        switch type {
+        case .remote:
+            guard let comic = comic, !isFavorited() else { return }
+            mainDataObject.addComicToFavorites(comic, explanation: getExplanationString())
+        case .favorite:
+            guard let comic = comic else { return }
+            mainDataObject.delete(comic)
+            fetchFavorites()
+        }
+        comic = comic
+    }
+    
+    func isFavorited() -> Bool {
+        guard let comic = comic else { return false }
+        return mainDataObject.hasFavorite(comic: comic)
     }
 }
 
@@ -83,21 +151,22 @@ enum Direction {
     case next
 }
 
-extension ComicBrowserOO {
-    func fetch(_ direction: Direction) {
+extension MainObservableObject {
+    func get(_ direction: Direction) {
         
         let comicId = direction == .previous ? currentComic - 1 : currentComic + 1
         
         guard comicId < latestComic else {
-            fetchLatestComic()
+            getLatestComic()
             return
         }
         
+        // used to initialize loading animation
         withAnimation {
             comic = nil
         }
 
-        comicService.fetchComic(withId: comicId)
+        comicService.getComic(withId: comicId)
             .receive(on: DispatchQueue.main)
             .sink { _ in
             } receiveValue: { [weak self] result in
@@ -109,7 +178,7 @@ extension ComicBrowserOO {
 }
 
 // MARK: HTML Parsing
-extension ComicBrowserOO {
+extension MainObservableObject {
     func getExplanationString() -> String {
         let formattedTitle = comic?.title.split(separator: " ").joined(separator: "_") ?? ""
         let urlTitle = "_" + formattedTitle
@@ -129,14 +198,15 @@ extension ComicBrowserOO {
                     }
                 } catch {
                     print("FAILED TO PARSE HTML")
+                    return "Parsing issue. 👎"
                 }
             } catch {
-                print("FAILED TO LOAD CONTENT")
+                return "It seems this page does not have an explanation. 👎"
             }
         } else {
-            print("BAD URL")
+            return "BAD URL 🙅‍♂️"
         }
-        return ""
+        return "It seems there was an error loading the explanation. 🚨"
     }
 }
 

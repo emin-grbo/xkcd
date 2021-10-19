@@ -2,11 +2,11 @@ import SwiftUI
 
 @main
 struct xkcdApp: App {
-    let persistenceController = ComicBrowserDO.shared
+    let persistenceController = MainDataObject.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

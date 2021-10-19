@@ -3,7 +3,7 @@ import SwiftUI
 struct SearchPickerView: View {
     
     @Environment(\.dismiss) var dismiss
-    @ObservedObject var observable: ComicBrowserOO
+    @ObservedObject var observable: MainObservableObject
     @State private var selection = "1"
     
     var body: some View {
@@ -28,8 +28,8 @@ struct SearchPickerView: View {
             
             Spacer()
             
-            Button("search") {
-                observable.fetchComic(withID: Int(selection) ?? 1)
+            Button("GO") {
+                observable.getComic(withID: Int(selection) ?? 1)
                 dismiss()
             }
             .buttonStyle(TextProminentButtonStyle())

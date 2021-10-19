@@ -1,6 +1,6 @@
 import Foundation
 
-struct Comic: Codable, Identifiable {
+struct Comic: Codable, Identifiable, Equatable {
     
     let num: Int
     let title: String

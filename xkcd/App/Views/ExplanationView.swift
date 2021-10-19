@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ExplanationView: View {
     
-    @ObservedObject var observable: ComicBrowserOO
+    @ObservedObject var observable: MainObservableObject
     @State var explanationString = ""
     
     var body: some View {
@@ -18,9 +18,7 @@ struct ExplanationView: View {
             .padding(.horizontal, 32)
         }
         .onAppear {
-            withAnimation {
-                explanationString = observable.getExplanationString()
-            }
+            explanationString = observable.getExplanationString()
         }
     }
 }

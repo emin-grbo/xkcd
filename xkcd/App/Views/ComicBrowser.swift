@@ -2,7 +2,8 @@ import SwiftUI
 
 struct ComicBrowser: View {
     
-    @StateObject private var observable = ComicBrowserOO(service: ComicService())
+    @ObservedObject var observable: MainObservableObject
+    let browserType: ComicBrowserType
     
     var body: some View {
         VStack {
@@ -17,20 +18,15 @@ struct ComicBrowser: View {
             .padding(.bottom, 16)
             .frame(width: UIScreen.screenWidth)
             .foregroundColor(Color.baseAccent)
-            
             Spacer()
-            
             ComicPage(comic: observable.getComic())
-            
             Spacer()
-            ControlsView(observable: observable)
-        }
-        .onAppear {
-            if observable.currentComic == 0 {
-                observable.fetchLatestComic()
-            } else {
-                observable.fetchComic(withID: observable.currentComic)
-            }
+            ControlsView(observable: observable, browserType: browserType)
         }
     }
+}
+
+enum ComicBrowserType {
+    case remote
+    case favorite
 }

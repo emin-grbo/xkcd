@@ -12,7 +12,7 @@ class ComicService: ComicServiceProtocol, ObservableObject {
         return urlSession.publisher(for: url)
     }
     
-    func fetchComic(withId id: Int) -> AnyPublisher<Comic, APIError> {
+    func getComic(withId id: Int) -> AnyPublisher<Comic, APIError> {
         guard let url = Endpoints.withId(comicID: id).url else {
             return Fail(error: APIError.badURL).eraseToAnyPublisher()
         }
