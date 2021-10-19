@@ -1,11 +1,11 @@
 import SwiftUI
 
 enum SFIcon: String {
-    case info = "info.circle"
-    case favorite = "heart.circle"
-    case left = "arrowshape.turn.up.left.circle.fill"
-    case right = "arrowshape.turn.up.right.circle.fill"
-    case search = "magnifyingglass.circle.fill"
+    case info = "doc.plaintext.fill"
+    case favorite = "heart.square.fill"
+    case left = "arrowtriangle.left.square.fill"
+    case right = "arrowtriangle.right.square.fill"
+    case search = "doc.text.fill.viewfinder"
     case newsPaper = "newspaper.fill"
 }
 

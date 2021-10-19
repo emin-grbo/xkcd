@@ -17,12 +17,13 @@ struct ComicBrowser: View {
             }
             .padding(.bottom, 16)
             .frame(width: UIScreen.screenWidth)
-            .foregroundColor(Color.baseAccent)
+            .foregroundColor(.white)
             Spacer()
             ComicPage(comic: observable.getComic())
             Spacer()
             ControlsView(observable: observable, browserType: browserType)
         }
+        .background(Color.baseDark)
     }
 }
 

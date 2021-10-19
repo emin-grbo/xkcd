@@ -51,11 +51,13 @@ struct ControlsView: View {
                 SFImage(.right)
             }
         }
+        .frame(height: 40)
         .font(.headline)
         .padding(.vertical, 32)
         .padding(.horizontal, 32)
-        .foregroundColor(Color.baseAccent)
+        .foregroundColor(.white)
         .buttonStyle(AnimatedTapButtonStyle())
+        
         .sheet(isPresented: $isShowingExplanation) {
             ExplanationView(observable: observable)
         }

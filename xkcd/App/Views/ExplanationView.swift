@@ -20,5 +20,6 @@ struct ExplanationView: View {
         .onAppear {
             explanationString = observable.getExplanationString()
         }
+        .background(Color.baseDark)
     }
 }

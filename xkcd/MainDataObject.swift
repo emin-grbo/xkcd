@@ -55,7 +55,8 @@ class MainDataObject {
         }
     }
     
-    func delete(_ comic: Comic) {
+    func delete(_ comic: Comic?) {
+        guard let comic = comic else { return }
         let fetchRequest: NSFetchRequest<ComicCD> = ComicCD.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "%K == %d", #keyPath(ComicCD.num), comic.num)
         
@@ -66,6 +67,7 @@ class MainDataObject {
         } catch {
             return
         }
+        save()
     }
     
     func fetchAllFavoriteComics() -> [ComicCD] {

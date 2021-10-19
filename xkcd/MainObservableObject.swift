@@ -129,7 +129,10 @@ extension MainObservableObject {
     func favoritesButtonTapped(type: ComicBrowserType) {
         switch type {
         case .remote:
-            guard let comic = comic, !isFavorited() else { return }
+            guard let comic = comic, !isFavorited() else {
+                mainDataObject.delete(comic)
+                comic = comic
+                return }
             mainDataObject.addComicToFavorites(comic, explanation: getExplanationString())
         case .favorite:
             guard let comic = comic else { return }

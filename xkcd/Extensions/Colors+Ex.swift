@@ -1,7 +1,7 @@
 import SwiftUI
 
 extension Color {
-    static var baseAccent:      Color { return Color(hex: "EDEDED") }
+    static var baseDark:      Color { return Color(hex: "211C29") }
 }
 
 extension Color {

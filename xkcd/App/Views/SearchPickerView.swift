@@ -38,5 +38,6 @@ struct SearchPickerView: View {
         .onAppear {
             selection = "\(observable.currentComic)"
         }
+        .background(Color.baseDark)
     }
 }

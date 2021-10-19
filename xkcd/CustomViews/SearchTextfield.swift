@@ -16,7 +16,7 @@ struct SearchTextfield: View {
         .overlay(
             RoundedRectangle(cornerRadius: 8)
                 .stroke(Color.gray, lineWidth: 1))
-        .background(.black)
+        .background(Color(hex: "1C1328"))
         .padding(.horizontal, 40)
     }
 }
