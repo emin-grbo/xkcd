@@ -57,4 +57,4 @@ Being how API only gets one comic per call, i considered introducing lazy loadin
 ![nav 1](https://user-images.githubusercontent.com/21968377/138003113-b060c7e2-9337-4769-8d63-8dd77b4039c0.png)
 
 
-## If you've got this far, thank you! 🙌
+## If you've gotten this far, thank you! 🙌
